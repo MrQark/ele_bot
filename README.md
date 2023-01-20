@@ -4,5 +4,7 @@ EleBot notifies you over Telegram when electricity in your place of interest dis
 *Prerequisites*
 
 ESP8266
+
 USB Power Adapter
+
 Micro-USB cable
