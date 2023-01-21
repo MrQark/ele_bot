@@ -1,0 +1,17 @@
+/** @file elebot_cfg.h
+ * 
+ * @brief EleBot configuration template - save it as elebot_cfg.h and configure it as proper.
+ *
+ * @par       
+ */ 
+
+#ifndef ELEBOT_CFG_H
+#define ELEBOT_CFG_H
+
+#define WIFI_SSID "PUT_WIFI_SSID"
+#define WIFI_PASS "PUT_WIFI_PASSWORD"
+#define ELEBOT_PYTHONANYTHERE_LINK "https://PUT_YOURNAME.pythonanywhere.com/ele_bot_ping"
+
+#define ELEBOT_PING_PERIOD_S 30 // EleBot Hw will send a ping message to pythonanythere script every ELEBOT_PING_PERIOD_S seconds
+
+#endif /* ELEBOT_CFG_H */
