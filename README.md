@@ -3,8 +3,18 @@ EleBot notifies you over Telegram when electricity in your place of interest dis
 
 *Prerequisites*
 
-ESP8266
+- ESP8266 board
 
-USB Power Adapter
+- USB Power Adapter
 
-Micro-USB cable
+- Micro-USB cable
+
+- pythonanythere account
+
+- vscode with platformio extension
+
+*How To Steps*
+
+- TBD
+
+
