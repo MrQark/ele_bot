@@ -1,7 +1,0 @@
-/* Save as this file  as creds.h and fill in credentials */
-#define WIFI_SSID "_wifi_ssid_"
-#define WIFI_PASS "_wifi_password_"
-#define TELEBOT_TOKEN "_telegram_bot_token_"
-#define ADMIN_ID  "_admin_chat_id"
-#define SUBSCRIBERS_NUM 2   // number of EleBot users
-#define SUBSCREIBERS_IDS  ADMIN_ID, "user1_chat_id"   // EleBot users' chat ID's 

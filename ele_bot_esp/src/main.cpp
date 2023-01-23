@@ -18,7 +18,7 @@ const char* ssid = WIFI_SSID;
 const char* password = WIFI_PASS;
 
 //Your Domain name with URL path or IP address with path
-String serverName = "https://kstaroverov.pythonanywhere.com/ele_bot_ping";
+String serverName = ELEBOT_PYTHONANYTHERE_LINK;
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
