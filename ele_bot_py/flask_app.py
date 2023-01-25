@@ -31,12 +31,16 @@ write_ping_counter(PING_COUNTER)
 def ele_bot_ping():
     global PING_COUNTER
     PING_COUNTER = PING_COUNTER + 1
-    text = str(request.args.get('input'))
-    dataset = {'req': text, 'timestamp': time.time()}
+    dev_mac = str(request.args.get('device_id'))
+    allowed_dev = False
+    if isinstance(dev_mac, str):
+        dev_mac_allowed = read_cfg()['id']
+        if dev_mac == dev_mac_allowed:
+            allowed_dev = True
+            print(f"PING granted from: {dev_mac}")
+    if not allowed_dev:
+        print(f"PING ignored from: {dev_mac}")
+    dataset = {'req': dev_mac, 'timestamp': time.time()}
     json_dump = json.dumps(dataset)
     write_ping_counter(PING_COUNTER)
     return json_dump
-
-
-if __name__ == "__main__":
-    app.run(debug=True)

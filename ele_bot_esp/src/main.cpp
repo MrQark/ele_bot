@@ -26,6 +26,15 @@ unsigned long lastTime = 0;
 // Timer set to ELEBOT_PING_PERIOD_MS ms
 unsigned long timerDelay = ELEBOT_PING_PERIOD_MS;
 
+String get_mac(){
+  String macAddr = WiFi.macAddress();
+  macAddr.remove(14, 1);
+  macAddr.remove(11, 1);
+  macAddr.remove(8, 1);
+  macAddr.remove(5, 1);
+  macAddr.remove(2, 1);
+  return macAddr;
+}
 void setup() {
   Serial.begin(9600); 
   WiFi.mode(WIFI_STA);
@@ -41,6 +50,7 @@ void setup() {
  
   Serial.println("EleBot is set to send a ping message to EleBot server every " + String(ELEBOT_PING_PERIOD_S) + " seconds (counted by timerDelay variable).");
   Serial.println("To change it, modify the ELEBOT_PING_PERIOD_S constant in elebot_cfg.h.");
+  Serial.println("EleBot MAC is: " + get_mac());
   
 }
 
@@ -51,9 +61,8 @@ void loop() {
     if(WiFi.status()== WL_CONNECTED){
       WiFiClientSecure client;
       HTTPClient http;
-      String macAddr = WiFi.macAddress();
-      String serverPath = serverName + "?device_id=" + macAddr + "&ping_period_s=" + String(ELEBOT_PING_PERIOD_S);
-      
+      String serverPath = serverName + "?device_id=" + get_mac() + "&ping_period_s=" + String(ELEBOT_PING_PERIOD_S);
+      Serial.println("PING request: " + serverPath);
       // Trust to pythonanythere assumed.
       client.setInsecure();
       // Your Domain name with URL path or IP address with path
